@@ -7,12 +7,21 @@ import java.util.List;
 import java.util.Set;
 
 public class Spider {
+	// Limitite do número de páginas para executar a pesquisa
 	private static final int MAX_PAGES_TO_SEARCH = 10;
+	//Set define cada página (url) visitada como única
 	private Set<String> pagesVisited = new HashSet<String>();
+	//List faz o armazenamento das páginas (urls) que serão visitadas a seguir
 	private List<String> pagesToVisit = new LinkedList<String>();
 
-	private String nextUrl() {
-		String nextUrl;
+	private String nextUrl() { //Método para definir a próxima página a ser visitada
+		String nextUrl;   
+		
+
+		/* remove a página (url) da lista de pagesToVisit se pagesVisited contém a nextUrl
+		Se  a página for visitada, ela será removida de pagesToVisit, e entrar para
+		a lista pagesVisited */
+		
 		do {
 			nextUrl = this.pagesToVisit.remove(0);
 		} while (this.pagesVisited.contains(nextUrl));

@@ -73,6 +73,7 @@ public class SpiderLeg
      */
     public boolean searchForWord(String searchWord) throws IOException
     {
+    	//mudanças aqui
     	FileWriter arq = new FileWriter("D:\\site.txt");
     	PrintWriter gravarArq = new PrintWriter(arq);
         // Defensive coding. This method should only be used after a successful crawl.
